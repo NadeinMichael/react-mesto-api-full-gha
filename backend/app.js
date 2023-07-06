@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 
-const { PORT = 3000, connectAddress = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { PORT = 4000, connectAddress = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
 const routes = require('./routes');
 
