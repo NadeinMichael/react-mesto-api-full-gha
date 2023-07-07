@@ -1,6 +1,6 @@
 import checkResponse from './checkResponse';
 
-export const baseUrl = 'https://auth.nomoreparties.co';
+export const baseUrl = 'http://localhost:4000';
 
 async function request(endpoint, options) {
   const res = await fetch(`${baseUrl}${endpoint}`, options);

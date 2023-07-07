@@ -99,11 +99,15 @@ function App() {
           setLoggedIn(false);
         }
       })
-      .catch(console.error);
+      .catch((err) => {
+        setLoggedIn(false);
+        console.log(err)
+      });
   };
 
   useEffect(() => {
     checkToken();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleCloseTooltip() {
@@ -119,7 +123,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
 
     async function makeRequest() {
       const newCard = await api.changeLikeCardStatus(card._id, !isLiked);
@@ -160,14 +164,16 @@ function App() {
   }
 
   useEffect(() => {
-    Promise.all([api.getInitialCards(), api.getUserInfo()])
+    if (loggedIn) {
+        Promise.all([api.getInitialCards(), api.getUserInfo()])
       .then(([resCards, resUser]) => {
         setCurrentUser(resUser);
         const cardList = resCards.map((card) => card);
         setCards(cardList);
       })
       .catch(console.error);
-  }, []);
+    }
+  }, [loggedIn]);
 
   return (
     <AppContext.Provider value={{ isLoading, closeAllPopups }}>

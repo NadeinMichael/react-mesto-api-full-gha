@@ -16,8 +16,8 @@ function Card({ card, onCardClick, onCardLike, setCardDelete, onConfirm }) {
   }
 
   const currentUser = useContext(CurrentUserContext);
-  const isOwn = card.owner._id === currentUser._id;
-  const isLiked = card.likes.some((i) => i._id === currentUser._id);
+  const isOwn = card.owner === currentUser._id;
+  const isLiked = card.likes.some((i) => i === currentUser._id);
   const cardLikeButtonClassName = `btn-like ${isLiked && 'btn-like_active'}`;
 
   return (
