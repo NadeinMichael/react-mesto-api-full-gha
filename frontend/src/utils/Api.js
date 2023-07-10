@@ -81,7 +81,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: `http://localhost:4000`,
+  baseUrl: `http://localhost:3000`,
   headers: {
     authorization: localStorage.getItem('token'),
     'Content-Type': 'application/json',

@@ -1,6 +1,6 @@
 import checkResponse from './checkResponse';
 
-export const baseUrl = 'http://localhost:4000';
+export const baseUrl = 'http://localhost:3000';
 
 async function request(endpoint, options) {
   const res = await fetch(`${baseUrl}${endpoint}`, options);
