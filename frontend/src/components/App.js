@@ -92,7 +92,7 @@ function App() {
       .checkJwt(token)
       .then((data) => {
         if (data) {
-          setUserData(data.data.email);
+          setUserData(data.data);
           setLoggedIn(true);
           navigate(location.pathname);
         } else {

@@ -85,8 +85,7 @@ const api = new Api({
   headers: {
     authorization: localStorage.getItem('token'),
     'Content-Type': 'application/json',
-  },
-  credentials: 'include'
+  }
 });
 
 export default api;
