@@ -91,9 +91,8 @@ function App() {
     mestoAuth
       .checkJwt(token)
       .then((data) => {
-        console.log(data);
         if (data) {
-          // setUserData(data.data);
+          setUserData(data.email);
           setLoggedIn(true);
           navigate(location.pathname);
         } else {
