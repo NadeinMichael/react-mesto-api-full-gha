@@ -63,8 +63,9 @@ function App() {
     mestoAuth
       .authorize(password, email)
       .then((data) => {
+        console.log(data);
         localStorage.setItem('token', data.token);
-        setUserData(email);
+        setUserData(data);
         setLoggedIn(true);
         navigate('/');
       })
