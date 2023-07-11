@@ -87,7 +87,6 @@ function App() {
   };
 
   const checkToken = () => {
-    console.log(111);
     const token = localStorage.getItem('token');
     mestoAuth
       .checkJwt(token)
