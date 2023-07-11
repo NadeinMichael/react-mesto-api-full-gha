@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const UnauthorizedError = require('../errors/unauthorized-error');
 
-const JWT_SECRET = 'unique-secret-key';
+const { JWT_SECRET } = process.env;
 
 function doesUserHavePermission(req, res, next) {
   const { authorization } = req.headers;
