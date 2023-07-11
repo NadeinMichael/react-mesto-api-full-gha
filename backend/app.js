@@ -24,7 +24,7 @@ app.use(express.json());
 app.post('/api/signin', validationSignIn, login);
 app.post('/api/signup', validationSignup, createUser);
 
-app.use('api', routes);
+app.use('/api', routes);
 
 app.use(errors());
 
