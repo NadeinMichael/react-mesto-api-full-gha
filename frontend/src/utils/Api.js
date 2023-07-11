@@ -81,7 +81,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: `http://tolmachev.nomoredomains.work`,
+  baseUrl: `http://tolmachev.nomoredomains.work/api`,
   headers: {
     authorization: localStorage.getItem('token'),
     'Content-Type': 'application/json',
