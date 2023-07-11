@@ -8,7 +8,7 @@ async function request(endpoint, options) {
 }
 
 export const register = (password, email) => {
-  return request('/signup', {
+  return request('signup', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -19,7 +19,7 @@ export const register = (password, email) => {
 };
 
 export const authorize = (password, email) => {
-  return request('/signin', {
+  return request('signin', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -30,7 +30,7 @@ export const authorize = (password, email) => {
 };
 
 export const checkJwt = (token) => {
-  return request('/users/me', {
+  return request('users/me', {
     method: 'GET',
     headers: {
       Accept: 'application/json',
