@@ -91,6 +91,7 @@ function App() {
     mestoAuth
       .checkJwt(token)
       .then((data) => {
+        console.log(data);
         if (data) {
           // setUserData(data.data);
           setLoggedIn(true);
