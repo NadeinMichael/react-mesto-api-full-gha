@@ -63,9 +63,8 @@ function App() {
     mestoAuth
       .authorize(password, email)
       .then((data) => {
-        console.log(data);
         localStorage.setItem('token', data.token);
-        setUserData(data);
+        setUserData(email);
         setLoggedIn(true);
         navigate('/');
       })
@@ -93,7 +92,7 @@ function App() {
       .checkJwt(token)
       .then((data) => {
         if (data) {
-          setUserData(data.data);
+          // setUserData(data.data);
           setLoggedIn(true);
           navigate(location.pathname);
         } else {
