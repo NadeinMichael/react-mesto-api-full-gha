@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
-// const cors = require('cors');
 
 const { PORT = 3000, connectAddress = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
@@ -19,10 +18,6 @@ mongoose.connect(connectAddress).then(() => {
 });
 
 const app = express();
-
-// app.use(cors({
-//   origin: 'http://localhost:3000',
-// }));
 
 app.use(express.json());
 

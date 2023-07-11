@@ -1,6 +1,6 @@
 import checkResponse from './checkResponse';
 
-export const baseUrl = 'http://tolmachev.nomoredomains.work/';
+export const baseUrl = 'http://tolmachev.nomoredomains.work';
 
 async function request(endpoint, options) {
   const res = await fetch(`${baseUrl}${endpoint}`, options);
