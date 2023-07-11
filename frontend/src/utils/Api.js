@@ -17,19 +17,19 @@ class Api {
   }
 
   getUserInfo() {
-    return this._request('/users/me', {
+    return this._request('users/me', {
       headers: this._headers,
     });
   }
 
   getInitialCards() {
-    return this._request('/cards', {
+    return this._request('cards', {
       headers: this._headers,
     });
   }
 
   editProfile({ name, about }) {
-    return this._request('/users/me', {
+    return this._request('users/me', {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
@@ -40,7 +40,7 @@ class Api {
   }
 
   addNewCard({ name, link }) {
-    return this._request('/cards', {
+    return this._request('cards', {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
@@ -52,25 +52,25 @@ class Api {
 
   changeLikeCardStatus(id, isLiked) {
     return (isLiked
-      ? this._request(`/cards/${id}/likes`, {
+      ? this._request(`cards/${id}/likes`, {
           method: 'PUT',
           headers: this._headers,
         })
-      : this._request(`/cards/${id}/likes`, {
+      : this._request(`cards/${id}/likes`, {
           method: 'DELETE',
           headers: this._headers,
         }))
   }
 
   deleteCard(id) {
-    return this._request(`/cards/${id}`, {
+    return this._request(`cards/${id}`, {
       method: 'DELETE',
       headers: this._headers,
     });
   }
 
   editAvatarProfile({ link }) {
-    return this._request('/users/me/avatar', {
+    return this._request('users/me/avatar', {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
