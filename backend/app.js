@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+require('dotenv').config();
 
 const { PORT = 3000, connectAddress = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
@@ -13,8 +14,6 @@ const {
   validationSignup,
   validationSignIn,
 } = require('./utils/validation');
-
-require('dotenv').config();
 
 mongoose.connect(connectAddress).then(() => {
   console.log('connected to bd');

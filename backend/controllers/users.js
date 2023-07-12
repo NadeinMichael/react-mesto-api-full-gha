@@ -11,12 +11,7 @@ const SALT_ROUNDS = 10;
 
 const getUsers = (req, res, next) => {
   User.find({})
-    .then((users) => {
-      if (!users) {
-        return next(new NotFoundError('Users not found'));
-      }
-      return res.status(200).send(users);
-    })
+    .then((users) => res.status(200).send(users))
     .catch((err) => next(err));
 };
 
@@ -118,10 +113,6 @@ const editAvatar = (req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-
-  if (!email || !password) {
-    return next(new BadRequestError('Не передан Email или пароль'));
-  }
 
   return User.findOne({ email }).select('+password')
     .then((user) => {
