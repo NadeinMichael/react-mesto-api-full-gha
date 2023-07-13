@@ -65,7 +65,7 @@ function App() {
       .then((data) => {
         localStorage.setItem('token', data.token);
         setUserData(email);
-        // setLoggedIn(true);
+        setLoggedIn(true);
         navigate('/');
       })
       .catch(console.error);
