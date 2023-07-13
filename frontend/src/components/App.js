@@ -106,7 +106,7 @@ function App() {
       });
   };
 
-    useEffect(() => {
+  useEffect(() => {
     const token = localStorage.getItem('token');
     if (token && loggedIn) {
         Promise.all([api.getInitialCards(), api.getUserInfo()])
@@ -117,8 +117,7 @@ function App() {
       })
       .catch(console.error);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loggedIn]);
 
   useEffect(() => {
     checkToken();
