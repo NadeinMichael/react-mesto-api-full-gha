@@ -177,6 +177,11 @@ function App() {
     }
   }, [loggedIn]);
 
+  const signOut = () => {
+    localStorage.removeItem('token');
+    setLoggedIn(false);
+  };
+
   return (
     <AppContext.Provider value={{ isLoading, closeAllPopups }}>
       <CurrentUserContext.Provider value={currentUser}>
@@ -230,7 +235,7 @@ function App() {
                         setCardDelete={(id) => {
                           setCurrentDeleteCard(id);
                         }}
-                        setLoggedIn={setLoggedIn}
+                        signOut={signOut}
                       />
                     }
                     loggedIn={loggedIn}
