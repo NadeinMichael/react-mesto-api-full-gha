@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+const cors = require('cors');
 require('dotenv').config();
 
 const { PORT = 3000, connectAddress = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
@@ -20,6 +21,8 @@ mongoose.connect(connectAddress).then(() => {
 });
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
