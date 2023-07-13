@@ -14,11 +14,13 @@ function Main({
   onConfirm,
   cards,
   userData,
+  setLoggedIn,
 }) {
   const currentUser = useContext(CurrentUserContext);
 
   const signOut = () => {
     localStorage.removeItem('token');
+    setLoggedIn(false);
   };
 
   return (

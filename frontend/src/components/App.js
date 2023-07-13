@@ -230,6 +230,7 @@ function App() {
                         setCardDelete={(id) => {
                           setCurrentDeleteCard(id);
                         }}
+                        setLoggedIn={setLoggedIn}
                       />
                     }
                     loggedIn={loggedIn}
