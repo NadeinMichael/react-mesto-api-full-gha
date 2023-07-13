@@ -175,7 +175,8 @@ function App() {
       })
       .catch(console.error);
     }
-  }, [loggedIn]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const signOut = () => {
     localStorage.removeItem('token');
