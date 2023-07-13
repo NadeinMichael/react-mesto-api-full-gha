@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 
 import errorLoginImg from '../images/error-login.svg';
@@ -105,7 +105,7 @@ function App() {
       });
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     checkToken();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
