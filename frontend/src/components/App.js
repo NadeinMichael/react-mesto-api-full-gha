@@ -106,6 +106,20 @@ function App() {
       });
   };
 
+    useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token && loggedIn) {
+        Promise.all([api.getInitialCards(), api.getUserInfo()])
+      .then(([resCards, resUser]) => {
+        setCurrentUser(resUser);
+        const cardList = resCards.map((card) => card);
+        setCards(cardList);
+      })
+      .catch(console.error);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     checkToken();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -163,20 +177,6 @@ function App() {
     }
     handleSubmit(makeRequest);
   }
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token && loggedIn) {
-        Promise.all([api.getInitialCards(), api.getUserInfo()])
-      .then(([resCards, resUser]) => {
-        setCurrentUser(resUser);
-        const cardList = resCards.map((card) => card);
-        setCards(cardList);
-      })
-      .catch(console.error);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const signOut = () => {
     localStorage.removeItem('token');
