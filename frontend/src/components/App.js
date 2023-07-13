@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 
 import errorLoginImg from '../images/error-login.svg';
@@ -93,7 +93,7 @@ function App() {
       .then((data) => {
         if (data) {
           setUserData(data.email);
-          // setLoggedIn(true);
+          setLoggedIn(true);
           navigate(location.pathname);
         } else {
           setLoggedIn(false);
@@ -105,7 +105,7 @@ function App() {
       });
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     checkToken();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
