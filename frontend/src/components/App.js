@@ -164,7 +164,8 @@ function App() {
   }
 
   useEffect(() => {
-    if (loggedIn) {
+    const token = localStorage.getItem('token');
+    if (token && loggedIn) {
         Promise.all([api.getInitialCards(), api.getUserInfo()])
       .then(([resCards, resUser]) => {
         setCurrentUser(resUser);
