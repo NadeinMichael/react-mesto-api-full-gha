@@ -108,7 +108,7 @@ function App() {
   useEffect(() => {
     checkToken();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loggedIn]);
 
   function handleCloseTooltip() {
     setShowInfoTooltip(false);
