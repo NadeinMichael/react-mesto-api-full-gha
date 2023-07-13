@@ -93,7 +93,7 @@ function App() {
       .then((data) => {
         if (data) {
           setUserData(data.email);
-          setLoggedIn(true);
+          // setLoggedIn(true);
           navigate(location.pathname);
         } else {
           setLoggedIn(false);
