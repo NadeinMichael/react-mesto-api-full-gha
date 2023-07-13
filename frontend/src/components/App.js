@@ -95,8 +95,9 @@ function App() {
           setUserData(data.email);
           setLoggedIn(true);
           navigate(location.pathname);
+          return;
         } else {
-          setLoggedIn(false);
+          return setLoggedIn(false);
         }
       })
       .catch((err) => {
