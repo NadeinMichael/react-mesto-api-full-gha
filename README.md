@@ -1,16 +1,4 @@
 [![Статус тестов](../../actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
 
 # react-mesto-api-full
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд - в `frontend/`. 
-  
-http://tolmachev.nomoredomains.work/
-
-Адрес репозитория: https://github.com/VladTolmachev/react-mesto-api-full-gha
-
-## Ссылки на проект
-
-IP-адрес 158.160.112.38
-
-Frontend https://tolmachev.nomoredomains.work
-
-Backend https://tolmachev.nomoredomains.work
+Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями.
